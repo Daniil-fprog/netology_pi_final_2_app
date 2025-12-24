@@ -15,20 +15,21 @@
 ---
 
 ## 📂 Структура репозитория
-
-├── todo_app/ # ToDo-сервис
-│ ├── app/
-│ ├── Dockerfile
-│ ├── requirements.txt
-│ └── README.md
+<pre>
+├── todo_app/
+│   ├── app/
+│   ├── Dockerfile
+│   ├── requirements.txt
+│   └── README.md
 │
-├── shorturl_app/ # Сервис сокращения URL
-│ ├── app/
-│ ├── Dockerfile
-│ ├── requirements.txt
-│ └── README.md
+├── shorturl_app/
+│   ├── app/
+│   ├── Dockerfile
+│   ├── requirements.txt
+│   └── README.md
 │
-└── README.md # Общее описание проекта
+└── README.md
+</pre>
 
 ---
 
@@ -70,6 +71,7 @@
 ### 1️⃣ Создать именованные тома
 
 ```bash
+2️⃣ Создание томов
 docker volume create todo_data
 docker volume create shorturl_data
 
@@ -86,19 +88,12 @@ docker run -d -p 8000:80 -v todo_data:/app/app/data todo-service
 cd shorturl_app
 docker build -t shorturl-service .
 docker run -d -p 8001:80 -v shorturl_data:/app/app/data shorturl-service
-
-
-🛠 Используемые технологии
-
-Python 3.11
-
-FastAPI
-
-SQLAlchemy
-
-SQLite
-
-Docker
-
-Uvicorn
 ```
+
+🛠 Используемые технологии:
+- Python 3.11
+- FastAPI
+- SQLAlchemy
+- SQLite
+- Docker
+- Uvicorn

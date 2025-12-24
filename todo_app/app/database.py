@@ -4,7 +4,10 @@ import os
 
 # Получаем абсолютный путь к корню проекта
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DATABASE_PATH = os.path.join(BASE_DIR, "data", "todo.db")
+DATA_DIR = os.path.join(BASE_DIR, "data")
+DATABASE_PATH = os.path.join(DATA_DIR, "todo.db")
+
+os.makedirs(DATA_DIR, exist_ok=True)
 
 engine = create_engine(
     f"sqlite:///{DATABASE_PATH}",
